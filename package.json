@@ -1,90 +1,91 @@
 {
-  "name": "package-name",
-  "version": "0.1.0",
-  "author": {
-    "name": "Author Name",
-    "email": "author@email.com",
-    "url": "https://website.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/username/repository.git"
-  },
-  "main": "./dist/package-name.cjs",
-  "module": "./dist/package-name.esm.js",
-  "jsdelivr": "./dist/package-name.iife.js",
-  "exports": {
-    ".": {
-      "require": "./dist/package-name.cjs",
-      "import": "./dist/package-name.esm.js",
-      "types": "./dist/package-name.d.ts"
+    "name": "secret-async-man",
+    "version": "0.0.1",
+    "author": {
+        "name": "Rokki Colcleasure",
+        "url": "https://github.com/tasteee"
     },
-    "./dist/": {
-      "import": "./dist/",
-      "require": "./dist/",
-      "types": "./dist/"
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tasteee/secret-async-man.git"
+    },
+    "main": "./dist/secret-async-man.cjs",
+    "module": "./dist/secret-async-man.esm.js",
+    "jsdelivr": "./dist/secret-async-man.iife.js",
+    "exports": {
+        ".": {
+            "require": "./dist/secret-async-man.cjs",
+            "import": "./dist/secret-async-man.esm.js",
+            "types": "./dist/secret-async-man.d.ts"
+        },
+        "./dist/": {
+            "import": "./dist/",
+            "require": "./dist/",
+            "types": "./dist/"
+        }
+    },
+    "scripts": {
+        "dev": "vite --host",
+        "prebuild": "",
+        "build": "tsc && vite build",
+        "postbuild": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+        "test": "vitest",
+        "test:coverage": "vitest --coverage",
+        "format": "prettier . --write",
+        "upgrade": "upgradeps",
+        "release": "npm run build && np"
+    },
+    "bugs": {
+        "url": "https://github.com/tasteee/secret-async-man/issues"
+    },
+    "description": "Package description.",
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE.md",
+        "CHANGELOG.md",
+        "src",
+        "package.json"
+    ],
+    "homepage": "https://github.com/tasteee/secret-async-man#readme",
+    "keywords": [
+        "some",
+        "keywords"
+    ],
+    "license": "MIT",
+    "private": false,
+    "type": "module",
+    "types": "./dist/secret-async-man.d.ts",
+    "typesVersions": {
+        "*": {
+            "*": [
+                "./dist/secret-async-man.d.ts"
+            ]
+        }
+    },
+    "typings": "./dist/secret-async-man.d.ts",
+    "devDependencies": {
+        "@types/jsdom": "^21.1.6",
+        "@types/node": "^20.11.5",
+        "@vitest/coverage-v8": "^1.2.1",
+        "dts-bundle-generator": "^9.2.4",
+        "jsdom": "^24.1.0",
+        "lint-staged": "^15.2.0",
+        "np": "^10.0.6",
+        "prettier": "^3.2.4",
+        "terser": "^5.31.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.3.3",
+        "upgradeps": "^2.0.6",
+        "vite": "^5.0.12",
+        "vitest": "^1.2.1",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "@types/react": "^18.0.0",
+        "@types/react-dom": "^18.0.0"
+    },
+    "peerDependencies": {
+        "react": "^18.0.0 || ^19.0.0",
+        "react-dom": "^18.0.0 || ^19.0.0"
     }
-  },
-  "scripts": {
-    "dev": "vite --host",
-    "prebuild": "rm -rf dist/*",
-    "build": "tsc && vite build",
-    "postbuild": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
-    "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "format": "prettier . --write",
-    "upgrade": "upgradeps",
-    "release": "npm run build && np"
-  },
-  "bugs": {
-    "url": "https://github.com/username/repository/issues"
-  },
-  "description": "Package description.",
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE.md",
-    "CHANGELOG.md",
-    "src",
-    "package.json"
-  ],
-  "funding": [
-    {
-      "type": "individual",
-      "url": "https://support.example.com"
-    }
-  ],
-  "homepage": "https://github.com/username/repository#readme",
-  "keywords": ["some", "keywords"],
-  "license": "MIT",
-  "private": false,
-  "sponsor": {
-    "url": "https://sponsor.example.com"
-  },
-  "type": "module",
-  "types": "./dist/package-name.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/package-name.d.ts"
-      ]
-    }
-  },
-  "typings": "./dist/package-name.d.ts",
-  "devDependencies": {
-    "@types/jsdom": "^21.1.6",
-    "@types/node": "^20.11.5",
-    "@vitest/coverage-v8": "^1.2.1",
-    "dts-bundle-generator": "^9.2.4",
-    "jsdom": "^24.1.0",
-    "lint-staged": "^15.2.0",
-    "np": "^10.0.6",
-    "prettier": "^3.2.4",
-    "terser": "^5.31.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3",
-    "upgradeps": "^2.0.6",
-    "vite": "^5.0.12",
-    "vitest": "^1.2.1"
-  }
 }
